@@ -221,7 +221,7 @@ static BOOL showNativeShareSheet(NSString *serializedShareEntity, UIView *source
 // %end
 
 // aaa
-%hook OBPrivacyLinkButton
+/*%hook OBPrivacyLinkButton
 - (void)doesNotRecognizeSelector:(SEL)aSelector {
     // iOS 18 / YouTube 20.x crash guard
     NSLog(@"[uYouEnhanced] Ignored selector %@ on OBPrivacyLinkButton",
@@ -246,7 +246,7 @@ static BOOL showNativeShareSheet(NSString *serializedShareEntity, UIView *source
     return [NSMethodSignature signatureWithObjCTypes:"v@:"];
 }
 
-%end
+%end*/
 %hook OBPrivacyLinkButton
 
 + (BOOL)resolveInstanceMethod:(SEL)sel {
