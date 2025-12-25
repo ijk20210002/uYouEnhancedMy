@@ -20,14 +20,14 @@
 @end
 
 // iOS 16 uYou crash fix - @level3tjg: https://github.com/qnblackcat/uYouPlus/pull/224
-@interface OBPrivacyLinkButton : UIButton
+/*@interface OBPrivacyLinkButton : UIButton
 - (instancetype)initWithCaption:(NSString *)caption
                      buttonText:(NSString *)buttonText
                           image:(UIImage *)image
                       imageSize:(CGSize)imageSize
                    useLargeIcon:(BOOL)useLargeIcon
                 displayLanguage:(NSString *)displayLanguage;
-@end
+@end*/
 
 // uYouLocal fix
 // @interface YTLocalPlaybackController : NSObject
