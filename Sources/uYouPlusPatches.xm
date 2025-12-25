@@ -247,7 +247,21 @@ static BOOL showNativeShareSheet(NSString *serializedShareEntity, UIView *source
 }
 
 %end
+%hook OBPrivacyLinkButton
 
++ (BOOL)resolveInstanceMethod:(SEL)sel {
+    class_addMethod(
+        self,
+        sel,
+        imp_implementationWithBlock(^id(id self) {
+            return nil;
+        }),
+        "@@:"
+    );
+    return YES;
+}
+
+%end
 // iOS 16 uYou crash fix - @level3tjg: https://github.com/qnblackcat/uYouPlus/pull/224
 // %group iOS16
 // %hook OBPrivacyLinkButton
