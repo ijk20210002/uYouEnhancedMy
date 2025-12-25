@@ -221,6 +221,14 @@ static BOOL showNativeShareSheet(NSString *serializedShareEntity, UIView *source
 // %end
 
 //
+%hook OBPrivacyLinkButton
+- (void)doesNotRecognizeSelector:(SEL)aSelector {
+    // iOS 18 / YouTube 20.x crash guard
+    NSLog(@"[uYouEnhanced] Ignored selector %@ on OBPrivacyLinkButton",
+          NSStringFromSelector(aSelector));
+    return;
+}
+%end
 
 // iOS 16 uYou crash fix - @level3tjg: https://github.com/qnblackcat/uYouPlus/pull/224
 // %group iOS16
