@@ -137,6 +137,12 @@ jobs:
           THEOS: ${{ github.workspace }}/theos
           YOUTUBE_URL: ${{ env.URL_YT }}
 
+      - name: Clean Theos build artifacts
+        run: |
+          cd ${{ github.workspace }}/main
+          make clean || true
+          rm -rf .theos
+          rm -rf packages
       - name: Fix compiling & Build Package
         id: build_package
         run: |
