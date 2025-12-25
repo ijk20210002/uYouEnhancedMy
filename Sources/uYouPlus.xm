@@ -1613,7 +1613,7 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 %end
 
 // App Settings Overlay Options
-/*%group gDisableAccountSection
+%group gDisableAccountSection
 %hook YTSettingsSectionItemManager
 - (void)updateAccountSwitcherSectionWithEntry:(id)arg1 {} // Account
 %end
@@ -1653,19 +1653,19 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 %hook YTSettingsSectionItemManager
 - (void)updateYourDataSectionWithEntry:(id)arg1 {} // Your data in YouTube
 %end
-%end*/
+%end
 
-//%group gDisablePrivacySection
-//%hook YTSettingsSectionItemManager
-//- (void)updatePrivacySectionWithEntry:(id)arg1 {} // Privacy
-//%end
-//%end
+%group gDisablePrivacySection
+%hook YTSettingsSectionItemManager
+- (void)updatePrivacySectionWithEntry:(id)arg1 {} // Privacy
+%end
+%end
 
-/*%group gDisableLiveChatSection
+%group gDisableLiveChatSection
 %hook YTSettingsSectionItemManager
 - (void)updateLiveChatSectionWithEntry:(id)arg1 {} // Live chat
 %end
-%end*/
+%end
 
 // Miscellaneous
 
