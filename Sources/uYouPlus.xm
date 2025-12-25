@@ -1655,11 +1655,11 @@ static NSMutableArray <YTIItemSectionRenderer *> *filteredArray(NSArray <YTIItem
 %end
 %end
 
-%group gDisablePrivacySection
-%hook YTSettingsSectionItemManager
-- (void)updatePrivacySectionWithEntry:(id)arg1 {} // Privacy
-%end
-%end
+//%group gDisablePrivacySection
+//%hook YTSettingsSectionItemManager
+//- (void)updatePrivacySectionWithEntry:(id)arg1 {} // Privacy
+//%end
+//%end
 
 %group gDisableLiveChatSection
 %hook YTSettingsSectionItemManager
