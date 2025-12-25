@@ -1,6 +1,11 @@
 #import "uYouPlusPatches.h"
 
 # pragma mark - YouTube patches
+/*%hook OBPrivacyLinkButton
+- (id)forwardingTargetForSelector:(SEL)aSelector {
+    return nil;
+}
+%end*/
 
 // Fix Google Sign in Patch
 %group gGoogleSignInPatch
@@ -247,7 +252,7 @@ static BOOL showNativeShareSheet(NSString *serializedShareEntity, UIView *source
 }
 
 %end*/
-%hook OBPrivacyLinkButton
+/*%hook OBPrivacyLinkButton
 
 + (BOOL)resolveInstanceMethod:(SEL)sel {
     class_addMethod(
@@ -259,7 +264,7 @@ static BOOL showNativeShareSheet(NSString *serializedShareEntity, UIView *source
         "@@:"
     );
     return YES;
-}
+}*/
 
 %end
 // iOS 16 uYou crash fix - @level3tjg: https://github.com/qnblackcat/uYouPlus/pull/224
