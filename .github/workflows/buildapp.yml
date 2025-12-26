@@ -8,7 +8,12 @@ on:
     inputs:
       sdk_version:
         description: "iOS SDK Version"
-        default: "26.0"
+        default: "17.5"
+        required: true
+        type: string
+      deployment_target:
+        description: "iOS Deployment Target"
+        default: "15.0"
         required: true
         type: string
       uyou_version:
@@ -154,7 +159,7 @@ jobs:
           export SYSROOT=$THEOS/sdks/$THEOS_SDK_NAME
           sed -i '' "30s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile                          # Modify the bundle ID
           sed -i '' "29s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile                        # Modify the app name
-          sed -i '' "1s#.*#export TARGET = iphone:clang:${{ inputs.sdk_version }}:14.0#g" Makefile # Modify the SDK version
+          sed -i '' "1s#.*#export TARGET = iphone:clang:${{ inputs.sdk_version }}:${{ inputs.deployment_target }}#g" Makefile # Modify the SDK version
           make package THEOS_PACKAGE_SCHEME=rootless IPA=Payload/YouTube.app FINALPACKAGE=1 SDKVERSION=${{ inputs.sdk_version }}
           echo "package=$(ls -t packages | head -n1)" >>$GITHUB_OUTPUT
           echo -e "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
