@@ -140,6 +140,7 @@ jobs:
       - name: Clean Theos build artifacts
         run: |
           cd ${{ github.workspace }}/main
+          export THEOS=${{ github.workspace }}/theos
           make clean || true
           rm -rf build
           rm -rf .theos
