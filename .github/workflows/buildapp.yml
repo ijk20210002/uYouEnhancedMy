@@ -18,7 +18,7 @@ on:
         type: string
       decrypted_youtube_url:
         description: "Direct URL of the decrypted YouTube IPA"
-        default: "https://armconverter.com/decryptedappstore/download/544007664/com.google.ios.youtube/hi?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjE4NzM4NiIsImlhdCI6MTc2NjcwNDY2MiwiZXhwIjoxNzY2NzE1NDYyLCJhcHBpZCI6NTQ0MDA3NjY0LCJhcHB2ZXIiOiJoaSJ9.l1-1n0cAFQsRzEei8NFuwey0JSmGP-m4bbNaXlIHnvQ"
+        default: "https://armconverter.com/decryptedappstore/download/544007664/com.google.ios.youtube/20.50.9?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjE4NzM4NiIsImlhdCI6MTc2NjcyNjE5MCwiZXhwIjoxNzY2NzM2OTkwLCJhcHBpZCI6NTQ0MDA3NjY0LCJhcHB2ZXIiOiIyMC41MC45In0.ECoBJW1CBfg6yn8ZzgeOxHqNa6HyqGA3if-eb1Ny1v8"
         required: true
         type: string
       bundle_id:
