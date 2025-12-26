@@ -423,7 +423,7 @@ static void refreshUYouAppearance() {
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"automaticallyCheckForUpdates"];
 
     // Disable uYou's welcome screen (fix #1147)
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showedWelcomeVC"];
+  //  [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showedWelcomeVC"];
  
     // Disable uYou's disable age restriction
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"disableAgeRestriction"];
