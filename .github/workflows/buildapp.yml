@@ -141,7 +141,7 @@ jobs:
         run: |
           cd ${{ github.workspace }}/main
           make clean || true
-　　　　    rm -rf build
+          rm -rf build
           rm -rf .theos
           rm -rf packages
       - name: Fix compiling & Build Package
