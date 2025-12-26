@@ -2,12 +2,23 @@
 #import "uYouPlusPatches.h"
 
 //ChatGPT
-%hook OBPrivacyLinkButton
+/*%hook OBPrivacyLinkButton
 - (id)forwardingTargetForSelector:(SEL)aSelector {
     NSLog(@"[OBPrivacyLinkButton missing SEL] %@", NSStringFromSelector(aSelector));
     return %orig;
 }
+%end*/
+%hook UIResponder
+
+- (void)doesNotRecognizeSelector:(SEL)aSelector {
+    NSLog(@"[CRASH SEL] class=%@ selector=%@",
+          NSStringFromClass([self class]),
+          NSStringFromSelector(aSelector));
+    %orig;
+}
+
 %end
+
 
 // Tweak's bundle for Localizations support - @PoomSmart - https://github.com/PoomSmart/YouPiP/commit/aea2473f64c75d73cab713e1e2d5d0a77675024f
 NSBundle *uYouPlusBundle() {
