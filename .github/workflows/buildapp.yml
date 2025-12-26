@@ -165,6 +165,13 @@ jobs:
           BUNDLE_ID: ${{ inputs.bundle_id }}
           APP_NAME: ${{ inputs.app_name }}
 
+      - name: Check OBPrivacyLinkButton in dylib
+        run: |
+          cd ${{ github.workspace }}/main
+          DYLIB=$(find . -name "*.dylib")
+          echo "Checking dylib: $DYLIB"
+          strings "$DYLIB" | grep OBPrivacyLinkButton || echo "OBPrivacyLinkButton not found"
+
       - name: Upload Artifact
         if: ${{ inputs.upload_artifact }}
         uses: actions/upload-artifact@v5
