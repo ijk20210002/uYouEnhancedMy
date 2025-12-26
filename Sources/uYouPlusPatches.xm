@@ -1,11 +1,7 @@
 #import "uYouPlusPatches.h"
 
 # pragma mark - YouTube patches
-/*%hook OBPrivacyLinkButton
-- (id)forwardingTargetForSelector:(SEL)aSelector {
-    return nil;
-}
-%end*/
+
 
 // Fix Google Sign in Patch
 %group gGoogleSignInPatch
@@ -223,50 +219,7 @@ static BOOL showNativeShareSheet(NSString *serializedShareEntity, UIView *source
         return %orig;
 }
 %end
-// %end
 
-// aaa
-/*%hook OBPrivacyLinkButton
-- (void)doesNotRecognizeSelector:(SEL)aSelector {
-    // iOS 18 / YouTube 20.x crash guard
-    NSLog(@"[uYouEnhanced] Ignored selector %@ on OBPrivacyLinkButton",
-          NSStringFromSelector(aSelector));
-    return;
-}
-%end
-%hook OBPrivacyLinkButton
-
-- (void)forwardInvocation:(NSInvocation *)invocation {
-    SEL sel = invocation.selector;
-    NSLog(@"[uYouEnhanced][OBPrivacyLinkButton] forwardInvocation: %@",
-          NSStringFromSelector(sel));
-    return;
-}
-%end
-%hook OBPrivacyLinkButton
-
-- (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    NSLog(@"[uYouEnhanced][OBPrivacyLinkButton] methodSignatureForSelector: %@",
-          NSStringFromSelector(aSelector));
-    return [NSMethodSignature signatureWithObjCTypes:"v@:"];
-}
-
-%end*/
-/*%hook OBPrivacyLinkButton
-
-+ (BOOL)resolveInstanceMethod:(SEL)sel {
-    class_addMethod(
-        self,
-        sel,
-        imp_implementationWithBlock(^id(id self) {
-            return nil;
-        }),
-        "@@:"
-    );
-    return YES;
-}*/
-
-%end
 // iOS 16 uYou crash fix - @level3tjg: https://github.com/qnblackcat/uYouPlus/pull/224
 // %group iOS16
 // %hook OBPrivacyLinkButton
