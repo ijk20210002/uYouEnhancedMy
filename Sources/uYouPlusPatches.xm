@@ -221,23 +221,7 @@ static BOOL showNativeShareSheet(NSString *serializedShareEntity, UIView *source
 %end
 
 // iOS 16 uYou crash fix - @level3tjg: https://github.com/qnblackcat/uYouPlus/pull/224
-// %group iOS16
-// %hook OBPrivacyLinkButton
-// %new
-// - (instancetype)initWithCaption:(NSString *)caption
-//                      buttonText:(NSString *)buttonText
-//                           image:(UIImage *)image
-//                       imageSize:(CGSize)imageSize
-//                    useLargeIcon:(BOOL)useLargeIcon {
-//   return [self initWithCaption:caption
-//                     buttonText:buttonText
-//                          image:image
-//                      imageSize:imageSize
-//                   useLargeIcon:useLargeIcon
-//                displayLanguage:[NSLocale currentLocale].languageCode];
-// }
-// %end
-// %end
+
 
 // Fix uYou playback speed crashes YT v18.49.3+, see https://github.com/iCrazeiOS/uYouCrashFix
 // %hook YTPlayerViewController
